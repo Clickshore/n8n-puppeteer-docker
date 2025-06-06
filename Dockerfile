@@ -2,7 +2,7 @@ FROM n8nio/n8n:latest
 
 USER root
 
-# Use apk package manager because base image uses Alpine Linux (not Debian/Ubuntu)
+# Use Alpine package manager apk instead of apt-get
 RUN apk add --no-cache \
     wget \
     ca-certificates \
