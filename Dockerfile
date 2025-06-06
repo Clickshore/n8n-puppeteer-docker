@@ -2,27 +2,28 @@ FROM n8nio/n8n:latest
 
 USER root
 
-# Use Alpine package manager apk instead of apt-get
+# Use correct Alpine packages and fix package names
 RUN apk add --no-cache \
     wget \
     ca-certificates \
-    fonts-liberation \
-    libappindicator \
+    nss \
     alsa-lib \
     atk \
-    atk-bridge \
+    atk-bridge2.0 \
     cups-libs \
     dbus-libs \
     drm \
-    mesa-gl \
-    gtk3 \
-    nspr \
-    nss \
     libx11 \
     libxcomposite \
     libxdamage \
     libxrandr \
-    xdg-utils
+    libappindicator \
+    mesa-gl \
+    gtk+3.0 \
+    nspr \
+    fonts-noto \
+    ttf-freefont \
+    # any other required packages here
 
 RUN npm install puppeteer
 
