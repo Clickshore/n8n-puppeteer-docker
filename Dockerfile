@@ -2,7 +2,7 @@ FROM n8nio/n8n:latest
 
 USER root
 
-# Use correct Alpine packages and fix package names
+# Use apk package manager (Alpine Linux) to install required dependencies for Puppeteer
 RUN apk add --no-cache \
     wget \
     ca-certificates \
@@ -22,8 +22,7 @@ RUN apk add --no-cache \
     gtk+3.0 \
     nspr \
     fonts-noto \
-    ttf-freefont \
-    # any other required packages here
+    ttf-freefont
 
 RUN npm install puppeteer
 
